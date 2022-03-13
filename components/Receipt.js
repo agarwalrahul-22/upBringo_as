@@ -15,13 +15,10 @@ const Receipt = () => {
     const [tm, setTm] = useState('');
     const [tmp, setTmp] = useState('');
     const [change, setChange] = useState(false);
-    const [chan, setChan] = useState(true);
     const [edit,setEdit] = useState(true);
 return (
   <ScrollView>
     <View style={styles.container}>
-      {chan &&
-      <>
       <Text style={styles.hh}> RECEIPT GENERATION FORM </Text>
       <View>
         <TextInput
@@ -114,10 +111,8 @@ return (
         onPress={() => {
           setChange(true);
           setEdit(false);
-          setChan(false);
         }}
       />
-      </>}
 
       {change &&
       <DataTable>
@@ -179,7 +174,6 @@ return (
       <Button title="Edit Details" onPress={() => {
           setChange(false);
           setEdit(true);
-          setChan(true);
         }}/>
     </DataTable>}
     </View>
